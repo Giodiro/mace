@@ -720,39 +720,54 @@ def get_params_options(
         else:
             no_decay_interactions[name] = param
 
-    param_options = dict(
-        params=[
-            {
-                "name": "embedding",
-                "params": model.node_embedding.parameters(),
-                "weight_decay": 0.0,
-            },
-            {
-                "name": "interactions_decay",
-                "params": list(decay_interactions.values()),
-                "weight_decay": args.weight_decay,
-            },
-            {
-                "name": "interactions_no_decay",
-                "params": list(no_decay_interactions.values()),
-                "weight_decay": 0.0,
-            },
-            {
-                "name": "products",
-                "params": model.products.parameters(),
-                "weight_decay": args.weight_decay,
-            },
-            {
-                "name": "readouts",
-                "params": model.readouts.parameters(),
-                "weight_decay": 0.0,
-            },
-        ],
-        lr=args.lr,
-        amsgrad=args.amsgrad,
-        betas=(args.beta, 0.999),
-    )
-    if hasattr(model, "joint_embedding") and model.joint_embedding is not None:
+    only_readouts = args.ft_readout_only
+    if only_readouts:
+        param_options = dict(
+            params=[
+                {
+                    "name": "readouts",
+                    "params": model.readouts.parameters(),
+                    "weight_decay": 0.0,
+                },
+            ],
+            lr=args.lr,
+            amsgrad=args.amsgrad,
+            betas=(args.beta, 0.999),
+        )
+    else:
+        param_options = dict(
+            params=[
+                {
+                    "name": "embedding",
+                    "params": model.node_embedding.parameters(),
+                    "weight_decay": 0.0,
+                },
+                {
+                    "name": "interactions_decay",
+                    "params": list(decay_interactions.values()),
+                    "weight_decay": args.weight_decay,
+                },
+                {
+                    "name": "interactions_no_decay",
+                    "params": list(no_decay_interactions.values()),
+                    "weight_decay": 0.0,
+                },
+                {
+                    "name": "products",
+                    "params": model.products.parameters(),
+                    "weight_decay": args.weight_decay,
+                },
+                {
+                    "name": "readouts",
+                    "params": model.readouts.parameters(),
+                    "weight_decay": 0.0,
+                },
+            ],
+            lr=args.lr,
+            amsgrad=args.amsgrad,
+            betas=(args.beta, 0.999),
+        )
+    if hasattr(model, "joint_embedding") and model.joint_embedding is not None and not only_readouts:
         param_options["params"].append(
             {
                 "name": "joint_embedding",

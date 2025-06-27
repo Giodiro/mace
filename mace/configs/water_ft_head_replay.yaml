@@ -1,0 +1,32 @@
+name: water_1024smpl_seed1_fthead
+
+seed: 1
+train_file: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_1024_seed1.xyz
+# Validation & test sets are the same.
+valid_file: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/ML_AB_dataset_2-val.xyz
+test_file: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/ML_AB_dataset_2-val.xyz
+
+foundation_model: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/gnn_checkpoints/mace/2023-12-10-mace-128-L0_energy_epoch-249.model
+
+E0s: "average"      # we might need to fix this some
+# learning rate and EMA are set by default with multihead finetuning
+energy_weight: 1    # default
+forces_weight: 100  # default
+batch_size: 16
+max_num_epochs: 5
+amsgrad: true
+default_dtype: float64
+device: cuda
+
+ft_readout_only: true
+multiheads_finetuning: true
+
+# Multihead replay finetuning config
+pt_train_file: "mp"
+num_samples_pt: 10000
+filter_type_pt: combinations
+subselect_pt: fps
+weight_pt: 0.1
+weight_ft: 1.0
+atomic_numbers: [1, 8]  # will restrict replay data to these elements
+force_mh_ft_lr: false

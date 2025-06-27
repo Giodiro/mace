@@ -1,0 +1,24 @@
+name: water_1024smpl_seed1_fthead
+
+seed: 1
+train_file: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_1024_seed1.xyz
+# Validation & test sets are the same.
+valid_file: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/ML_AB_dataset_2-val.xyz
+test_file: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/ML_AB_dataset_2-val.xyz
+
+foundation_model: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/gnn_checkpoints/mace/2023-12-10-mace-128-L0_energy_epoch-249.model
+
+E0s: "average"      # we might need to fix this some
+lr: 0.001           # default
+energy_weight: 1    # default
+forces_weight: 100  # default
+batch_size: 16
+max_num_epochs: 10  # total of 640 steps
+ema: true
+ema_decay: 0.9  # reduced from default 0.99. Might need to disable for small datasets
+amsgrad: true
+default_dtype: float64
+device: cuda
+
+ft_readout_only: true
+multiheads_finetuning: false

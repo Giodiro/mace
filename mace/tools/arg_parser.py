@@ -475,6 +475,12 @@ def build_default_arg_parser() -> argparse.ArgumentParser:
         type=str2bool,
         default=False,
     )
+    parser.add_argument(
+        "--ft_readout_only",
+        help="Whether to allow training of just the readout heads",
+        type=str2bool,
+        default=False,
+    )
 
     # Keys
     parser.add_argument(
