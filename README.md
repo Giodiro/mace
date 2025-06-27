@@ -25,6 +25,11 @@ these have been generated with the `create_subsampled_dataset.py` script.
 PYTHONPATH='.' python -m mace.cli.run_train --config mace/configs/water_ft_all.yaml
 ```
 
+With slurm (make sure to check the slurm parameters make sense)
+```bash
+./slurm/run_with_cfg.sh mace/configs/water_ft_all.yaml
+```
+
 #### New scripts
 
 For dataset stuff:
