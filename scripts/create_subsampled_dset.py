@@ -36,3 +36,19 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     run(args.data_path, args.save_path, args.points, args.seed)
+
+
+"""
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_8_seed1.xyz \
+    --seed=1 --points=8
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_32_seed1.xyz \
+    --seed=1 --points=32
+    python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_1024_seed1.xyz \
+    --seed=1 --points=1024
+"""
