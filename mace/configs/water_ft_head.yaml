@@ -14,7 +14,7 @@ forces_key: REF_forces
 
 foundation_model: small #/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/gnn_checkpoints/mace/2023-12-10-mace-128-L0_energy_epoch-249.model
 
-E0s: "average"      # we might need to fix this some
+E0s: "{1: -5.865928644991999, 8: -2.9329643224959985}"      # equal to "average" with whole dataset
 lr: 0.001           # default
 energy_weight: 1    # default
 forces_weight: 100  # default
