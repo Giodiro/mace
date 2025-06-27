@@ -1,6 +1,8 @@
-name: water_1024smpl_seed1_fthead
-
+name: water_1024smpl_seed1_fthead_replay
 seed: 1
+work_dir: /leonardo_work/IIT24_AtomSim/franken/rebuttal/mace_finetune/water_1024smpl_seed1_fthead_replay/
+downloads_dir: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/
+
 train_file: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_1024_seed1.xyz
 # Validation & test sets are the same.
 valid_file: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/ML_AB_dataset_2-val.xyz
