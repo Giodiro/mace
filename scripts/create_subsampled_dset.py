@@ -47,8 +47,60 @@ python scripts/create_subsampled_dset.py \
     --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
     --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_32_seed1.xyz \
     --seed=1 --points=32
-    python scripts/create_subsampled_dset.py \
+python scripts/create_subsampled_dset.py \
     --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
     --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_1024_seed1.xyz \
     --seed=1 --points=1024
+
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_8_seed2.xyz \
+    --seed=2 --points=8
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_32_seed2.xyz \
+    --seed=2 --points=32
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_1024_seed2.xyz \
+    --seed=2 --points=1024
+
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_8_seed3.xyz \
+    --seed=3 --points=8
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_32_seed3.xyz \
+    --seed=3 --points=32
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_1024_seed3.xyz \
+    --seed=3 --points=1024
+
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_8_seed4.xyz \
+    --seed=4 --points=8
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_32_seed4.xyz \
+    --seed=4 --points=32
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_1024_seed4.xyz \
+    --seed=4 --points=1024
+
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_8_seed5.xyz \
+    --seed=5 --points=8
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_32_seed5.xyz \
+    --seed=5 --points=32
+python scripts/create_subsampled_dset.py \
+    --data-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/water_train.xyz \
+    --save-path=/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/water/train_1024_seed5.xyz \
+    --seed=5 --points=1024
 """

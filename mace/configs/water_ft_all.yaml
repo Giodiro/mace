@@ -1,4 +1,4 @@
-name: water_1024smpl_seed1_ftall
+name: water_1024smpl_seed1_fw10_lr1e-2_ftall
 seed: 1
 work_dir: /leonardo_work/IIT24_AtomSim/franken/rebuttal/mace_finetune/water_1024smpl_seed1_ftall/
 downloads_dir: /leonardo_scratch/fast/IIT24_AtomSim/franken/franken_cache/
@@ -17,11 +17,11 @@ foundation_model: small  #/leonardo_scratch/fast/IIT24_AtomSim/franken/franken_c
 E0s: "{1: -5.865928644991999, 8: -2.9329643224959985}"      # equal to "average" with whole dataset
 lr: 0.001           # default
 energy_weight: 1    # default
-forces_weight: 100  # default
+forces_weight: 10   # default
 stress_weight: 0
 dipole_weight: 0
-batch_size: 16
-max_num_epochs: 20  # total of 640 steps
+batch_size: 8
+max_num_epochs: 30
 ema: true
 ema_decay: 0.9  # reduced from default 0.99. Might need to disable for small datasets
 amsgrad: true

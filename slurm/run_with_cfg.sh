@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# --qos=qos_gpu_a100-dev
-# --qos=qos_gpu-dev
-
 set -eux
 
 # Check if an argument is provided
@@ -24,8 +21,6 @@ if [ -z "$EXP_NAME" ]; then
     echo "ERROR: Could not extract experiment name (key 'exp_name') from input file at '$INPUT_YAML'."
     exit 3
 fi
-BASE_EXP_NAME=`basename "$INPUT_YAML" .yaml`
-
 
 sbatch <<EOT
 #!/bin/bash
@@ -36,7 +31,7 @@ sbatch <<EOT
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
 #SBATCH --nodes=1
-#SBATCH --time=8:00:00
+#SBATCH --time=2:00:00
 #SBATCH --account=IscrC_ERLO
 #SBATCH --partition=boost_usr_prod
 ##SBATCH --qos=boost_qos_dbg
