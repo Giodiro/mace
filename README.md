@@ -35,3 +35,9 @@ With slurm (make sure to check the slurm parameters make sense)
 For dataset stuff:
  - `rewrite_dset_keys.py` : rewrites energy to REF_energy, forces to REF_forces in the xyz
  - `create_subsampled_dataset.py` : creates subsampled datasets
+
+Evaluation:
+ - `evaluate_models.py` : runs validation for all trained models and saves predictions
+
+Training:
+ - `slurm/run_full_exp.py` : runs a list of training experiments iterating through random seed and number of samples
